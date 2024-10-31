@@ -10,30 +10,35 @@ for chances in range(1,4):
         menu = input('''Acesso liberado!
                      
 Menu:               
-1. Saldo.
+1. Depósito.
 2. Saque.
-3. Depósito.
+3. Saldo.
 4. Extrato.
 5. Saída.
 O que você deseja?
                      
 >> ''')
         if menu == '1':
-            print(f'Seu saldo disponível é no valor de R${saldo:.2f}.')
+            deposito = float(input('''Digite o valor do depósito:
+>> '''))
+            saldo += deposito
+            extrato.append(f'Depósito: R${deposito:.2f}')
+            print(f'Depósito realizado com sucesso! Seu novo saldo é: R${saldo:.2f}')
+            
             volta_menu = input('''Você deseja voltar ao menu principal?
 1. Sim.
 2. Não.
 >> ''')
             if volta_menu == '1':
                 menu = input('''
-Menu:                   
-1. Saldo.
+Menu:               
+1. Depósito.
 2. Saque.
-3. Depósito.
+3. Saldo.
 4. Extrato.
 5. Saída.
-O que você deseja agora?
-                      
+O que você deseja?
+                     
 >> ''')
         if menu == '2':
             saque = float(input('''Digite o valor do saque:
@@ -47,35 +52,31 @@ O que você deseja agora?
 >> ''')
             if volta_menu == '1':
                 menu = input('''
-Menu:                   
-1. Saldo.
+Menu:               
+1. Depósito.
 2. Saque.
-3. Depósito.
+3. Saldo.
 4. Extrato.
 5. Saída.
-O que você deseja agora?
-                      
+O que você deseja?
+                     
 >> ''')
         if menu == '3':
-            deposito = float(input('''Digite o valor do depósito:
->> '''))
-            saldo += deposito
-            extrato.append(f'Depósito: R${deposito:.2f}')
-            print(f'Depósito realizado com sucesso! Seu novo saldo é: R${saldo:.2f}')
+            print(f'Seu saldo disponível é no valor de R${saldo:.2f}.')
             volta_menu = input('''Você deseja voltar ao menu principal?
 1. Sim.
 2. Não.
 >> ''')
             if volta_menu == '1':
                 menu = input('''
-Menu:                   
-1. Saldo.
+Menu:               
+1. Depósito.
 2. Saque.
-3. Depósito.
+3. Saldo.
 4. Extrato.
 5. Saída.
-O que você deseja agora?
-                      
+O que você deseja?
+                     
 >> ''')
         if menu == '4':
             print('Extrato bancário: ')
@@ -90,14 +91,14 @@ O que você deseja agora?
 >> ''')
             if volta_menu == '1':
                 menu = input('''
-Menu:                   
-1. Saldo.
+Menu:               
+1. Depósito.
 2. Saque.
-3. Depósito.
+3. Saldo.
 4. Extrato.
 5. Saída.
-O que você deseja agora?
-                      
+O que você deseja?
+                     
 >> ''')
         if menu == '5':
             print('Obrigada, até logo!')
@@ -110,3 +111,4 @@ O que você deseja agora?
         print(f'Acesso negado. Tente novamente, você utilizou {chances} das suas 3 chances.')
 else:
     print('Você excedeu o número de tentativas. Acesso bloqueado.')
+n = input("Aperte 'ENTER' para sair") 
